@@ -17,11 +17,21 @@ namespace TruckingCar.data.model
     
     public partial class TruckingCarEntities : DbContext
     {
+        private static TruckingCarEntities _context;
+
         public TruckingCarEntities()
             : base("name=TruckingCarEntities")
         {
         }
-    
+
+        public static TruckingCarEntities GetContext()
+        {
+            if (_context == null)
+                _context = new TruckingCarEntities();
+
+            return _context;
+        }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

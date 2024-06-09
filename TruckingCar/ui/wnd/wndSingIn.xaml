@@ -1,15 +1,15 @@
-﻿<Window x:Class="TruckingCar.ui.wnd.winSingIn"
+﻿<Window x:Class="TruckingCar.ui.wnd.wndSingIn"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TruckingCar.ui.wnd"
         mc:Ignorable="d"
-        Title="TruckingCar" 
-        Height="200" 
+        Title="wndSingIn" 
+        Height="250" 
         Width="300"
         ResizeMode="NoResize"
-        Icon="/resurces\assets\logotype\hatchback.png">
+        Icon="C:\Users\aleksei\source\repos\TruckingCar\resurces\assets\logotype\racing-car.png">
     <Grid>
         <StackPanel
             Orientation="Vertical"
@@ -17,24 +17,35 @@
             VerticalAlignment="Center">
             <Label
                 Content="Вход в систему"
-                FontStyle="Italic"
                 FontSize="20"/>
             <Label
                 Content="Логин:"/>
             <TextBox
-                Width="250"/>
+                x:Name="tbLogin"
+                Width="250" 
+                TextChanged="TbLogin_TextChanged"/>
             <Label
                 Content="Пароль:"/>
             <Grid>
                 <PasswordBox
-                    Width="250"/>
+                    x:Name="pbPassword"
+                    Width="250" 
+                    PasswordChanged="PbPassword_PasswordChanged"/>
                 <TextBox
+                    x:Name="tbPassword"
+                    Width="250" 
                     Visibility="Hidden"
-                    Width="250"/>
+                    TextChanged="TbPassword_TextChanged"/>
             </Grid>
+            <CheckBox
+                x:Name="chbPasswordChecked"
+                Content="Показать пароль" 
+                Click="ChbPasswordChecked_Click"/>
             <Button
+                x:Name="btnSingIn"
                 Content="Вход"
-                Margin="0 5 0 5"/>
+                Margin="0 5 0 0" 
+                Click="BtnSingIn_Click"/>
         </StackPanel>
     </Grid>
 </Window>

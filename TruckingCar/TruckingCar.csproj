@@ -68,11 +68,13 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ui\wnd\winSingIn.xaml.cs">
-      <DependentUpon>winSingIn.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="ui\classes\ManagerFrame.cs" />
+    <Compile Include="ui\classes\ManagerLogin.cs" />
     <Compile Include="ui\wnd\wndMain.xaml.cs">
       <DependentUpon>wndMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\wnd\wndSingIn.xaml.cs">
+      <DependentUpon>wndSingIn.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -160,7 +162,6 @@
   <ItemGroup>
     <Folder Include="resurces\assets\icons\" />
     <Folder Include="resurces\assets\images\" />
-    <Folder Include="ui\classes\" />
     <Folder Include="ui\pg\" />
     <Folder Include="ui\uc\" />
   </ItemGroup>
@@ -175,7 +176,7 @@
       <DependentUpon>TruckingCarDB.edmx</DependentUpon>
       <LastGenOutput>TruckingCarDB.cs</LastGenOutput>
     </Content>
-    <Resource Include="resurces\assets\logotype\hatchback.png" />
+    <Resource Include="resurces\assets\logotype\racing-car.png" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
@@ -185,11 +186,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ui\wnd\winSingIn.xaml">
+    <Page Include="resurces\styles\template\ButtonTemplate.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ui\wnd\wndMain.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\wnd\wndSingIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
