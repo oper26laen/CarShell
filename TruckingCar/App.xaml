@@ -12,7 +12,8 @@
 
 
                 <!--Отображения-->
-                
+                <ResourceDictionary Source="/resurces\styles\template\ButtonTemplate.xaml"/>
+
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

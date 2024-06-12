@@ -8,5 +8,6 @@ namespace TruckingCar.ui.classes
 {
     class ManagerLogin
     {
+        public static string Login { get; set; }
     }
 }

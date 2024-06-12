@@ -10,25 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TruckingCar.ui.classes;
 
-namespace TruckingCar.ui.wnd
+namespace TruckingCar.ui.pg
 {
     /// <summary>
-    /// Логика взаимодействия для wndMain.xaml
+    /// Логика взаимодействия для pdListCars.xaml
     /// </summary>
-    public partial class wndMain : Window
+    public partial class pdListCars : Page
     {
-        public wndMain()
+        public pdListCars()
         {
             InitializeComponent();
-            lbLoginText.Content = ManagerLogin.Login;
-        }
-
-        private void FrameMain_ContentRendered(object sender, EventArgs e)
-        {
-
         }
     }
 }

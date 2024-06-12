@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using TruckingCar.data.model;
+using TruckingCar.ui.classes;
 
 namespace TruckingCar.ui.wnd
 {
@@ -50,9 +51,14 @@ namespace TruckingCar.ui.wnd
             var CurrentUser = User.FirstOrDefault(x => x.Login == tbLogin.Text & x.Password == pbPassword.Password);
             if (CurrentUser != null)
             {
+                ManagerLogin.Login = tbLogin.Text;
                 wndMain wndMain = new wndMain();
                 wndMain.Show();
                 this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Пользователя не существует!!!");
             }
         }
     }

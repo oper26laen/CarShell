@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TruckingCar.ui.wnd"
         mc:Ignorable="d"
-        Title="wndSingIn" 
+        Title="TruckingCar" 
         Height="250" 
         Width="300"
         ResizeMode="NoResize"
-        Icon="C:\Users\aleksei\source\repos\TruckingCar\resurces\assets\logotype\racing-car.png">
+        WindowStartupLocation="CenterScreen"
+        Icon="/resurces\assets\logotype\racing-car.png">
+    
     <Grid>
         <StackPanel
             Orientation="Vertical"
@@ -45,7 +47,8 @@
                 x:Name="btnSingIn"
                 Content="Вход"
                 Margin="0 5 0 0" 
-                Click="BtnSingIn_Click"/>
+                Click="BtnSingIn_Click"
+                Template="{StaticResource ButtonTemplate}"/>
         </StackPanel>
     </Grid>
 </Window>

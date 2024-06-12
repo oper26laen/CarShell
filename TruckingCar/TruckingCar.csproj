@@ -70,6 +70,12 @@
     </Compile>
     <Compile Include="ui\classes\ManagerFrame.cs" />
     <Compile Include="ui\classes\ManagerLogin.cs" />
+    <Compile Include="ui\pg\pdListCars.xaml.cs">
+      <DependentUpon>pdListCars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\uc\ClientProfilButton.xaml.cs">
+      <DependentUpon>ClientProfilButton.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ui\wnd\wndMain.xaml.cs">
       <DependentUpon>wndMain.xaml</DependentUpon>
     </Compile>
@@ -160,10 +166,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="resurces\assets\icons\" />
     <Folder Include="resurces\assets\images\" />
-    <Folder Include="ui\pg\" />
-    <Folder Include="ui\uc\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="data\model\TruckingCarDB.Context.tt">
@@ -176,6 +179,7 @@
       <DependentUpon>TruckingCarDB.edmx</DependentUpon>
       <LastGenOutput>TruckingCarDB.cs</LastGenOutput>
     </Content>
+    <Resource Include="resurces\assets\icons\user.png" />
     <Resource Include="resurces\assets\logotype\racing-car.png" />
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +191,14 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="resurces\styles\template\ButtonTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\pg\pdListCars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\uc\ClientProfilButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

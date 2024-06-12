@@ -4,10 +4,55 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:TruckingCar.ui.wnd"
+        xmlns:uc="clr-namespace:TruckingCar.ui.uc"
         mc:Ignorable="d"
         Title="wndMain" 
-        Height="450" Width="800">
+        MinHeight="450" 
+        MinWidth="800"
+        WindowStartupLocation="CenterScreen"
+        Icon="/resurces\assets\logotype\racing-car.png">
     <Grid>
-        
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <uc:ClientProfilButton
+            Grid.Column="0"
+            Grid.Row="0"
+            url="\resurces\assets\icons\user.png"/>
+
+        <Label
+            x:Name="lbLoginText"
+            Grid.Row="0"
+            Grid.Column="1"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Center"/>
+
+        <Button
+            x:Name="btnGoBack"
+            Content="Назад"
+            Grid.Column="1"
+            Grid.Row="0"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Center"
+            Width="60"
+            Height="50"
+            Template="{StaticResource ButtonTemplate}"/>
+
+        <Border
+            Grid.Column="1"
+            Grid.Row="1"
+            Background="DarkGray"
+            CornerRadius="10 0 0 0">                    
+            <Frame
+                x:Name="frameMain"
+                NavigationUIVisibility="Hidden"
+                ContentRendered="FrameMain_ContentRendered"/>
+        </Border>
     </Grid>
 </Window>

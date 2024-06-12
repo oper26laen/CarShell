@@ -10,23 +10,25 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
-using TruckingCar.ui.classes;
 
-namespace TruckingCar.ui.wnd
+namespace TruckingCar.ui.uc
 {
     /// <summary>
-    /// Логика взаимодействия для wndMain.xaml
+    /// Логика взаимодействия для ClientProfilButton.xaml
     /// </summary>
-    public partial class wndMain : Window
+    public partial class ClientProfilButton : UserControl
     {
-        public wndMain()
+        public ClientProfilButton()
         {
             InitializeComponent();
-            lbLoginText.Content = ManagerLogin.Login;
+            this.DataContext = this;
         }
 
-        private void FrameMain_ContentRendered(object sender, EventArgs e)
+        public string url { get; set; }
+
+        private void Rectangle_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
 
         }
