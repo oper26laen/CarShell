@@ -53,7 +53,7 @@
                 <DataGridTextColumn
                     Header="Город"
                     Binding="{Binding Cities.CityName}"
-                    Width="*"/>
+                    Width="auto"/>
                 <DataGridTextColumn
                     Header="Статус"
                     Binding="{Binding Statuses.StatusName}"

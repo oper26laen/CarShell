@@ -28,7 +28,7 @@ namespace TruckingCar.ui.pg
 
             var Client = TruckingCarEntities1.GetContext().Clients;
             var ClientID = Client.FirstOrDefault(x => x.UserID == ManagerID.UserID);
-            if(ClientID != null)
+            if (ClientID != null)
                 ManagerID.ClientID = ClientID.ClientID;
 
             var allCities = TruckingCarEntities1.GetContext().Cities.ToList();
@@ -36,8 +36,7 @@ namespace TruckingCar.ui.pg
             combCities.ItemsSource = allCities;
             combCities.SelectedIndex = 0;
 
-            var currentCars = TruckingCarEntities1.GetContext().Cars.ToList();
-            dgListCars.ItemsSource = currentCars;
+            dgListCars.ItemsSource = TruckingCarEntities1.GetContext().Cars.ToList();
         }
 
         private void BtnOrder_Click(object sender, RoutedEventArgs e)
