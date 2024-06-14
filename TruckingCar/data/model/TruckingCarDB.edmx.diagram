@@ -4,16 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="4e5df061508f4d6ca5cee8bb79ef952e" Name="Diagram1">
+      <Diagram DiagramId="e58d64d1dc4d41c290f1186fd3303ae7" Name="Diagram1">
         <EntityTypeShape EntityType="TruckingCarModel.Cars" Width="1.5" PointX="3" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckingCarModel.Cities" Width="1.5" PointX="0.75" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckingCarModel.Clients" Width="1.5" PointX="3" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="TruckingCarModel.Cities" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TruckingCarModel.Clients" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
         <EntityTypeShape EntityType="TruckingCarModel.Orders" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckingCarModel.Rentals" Width="1.5" PointX="7.5" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckingCarModel.Roles" Width="1.5" PointX="1.5" PointY="13.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckingCarModel.Statuses" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckingCarModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="4.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="TruckingCarModel.Users" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TruckingCarModel.Rentals" Width="1.5" PointX="7.5" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TruckingCarModel.Roles" Width="1.5" PointX="1.5" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TruckingCarModel.Statuses" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TruckingCarModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TruckingCarModel.Users" Width="1.5" PointX="0.75" PointY="9.5" IsExpanded="true" />
         <AssociationConnector Association="TruckingCarModel.FK_Cars_Cities" ManuallyRouted="false" />
         <AssociationConnector Association="TruckingCarModel.FK_Cars_Statuses" ManuallyRouted="false" />
         <AssociationConnector Association="TruckingCarModel.FK_Orders_Cars" ManuallyRouted="false" />

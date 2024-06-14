@@ -6,53 +6,72 @@
         xmlns:local="clr-namespace:TruckingCar.ui.wnd"
         xmlns:uc="clr-namespace:TruckingCar.ui.uc"
         mc:Ignorable="d"
-        Title="wndMain" 
+        Title="CarShell" 
         MinHeight="450" 
         MinWidth="800"
         WindowStartupLocation="CenterScreen"
         Icon="/resurces\assets\logotype\racing-car.png">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
-            <RowDefinition Height="*"/>
-        </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="60"/>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="60"/>
         </Grid.ColumnDefinitions>
 
-        <uc:ClientProfilButton
+        <Border
             Grid.Column="0"
-            Grid.Row="0"
-            url="\resurces\assets\icons\user.png"/>
+            Background="Gray">
+            <Grid>
+                <Button
+                    x:Name="btnGoBack"
+                    Content="Назад"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Top"
+                    Width="50"
+                    Height="30"
+                    Visibility="Hidden"
+                    Margin="5"
+                    Template="{StaticResource ButtonTemplate}" 
+                    Click="BtnGoBack_Click"/>
 
-        <Label
-            x:Name="lbLoginText"
-            Grid.Row="0"
-            Grid.Column="1"
-            HorizontalAlignment="Left"
-            VerticalAlignment="Center"/>
+                <Button
+                    x:Name="btnExit"
+                    Content="Выйти"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Bottom"
+                    Width="50"
+                    Height="30"
+                    Margin="5"
+                    Template="{StaticResource ButtonTemplate}" 
+                    Click="BtnExit_Click" />
+            </Grid>
+        </Border>
 
-        <Button
-            x:Name="btnGoBack"
-            Content="Назад"
+        <Frame
+            x:Name="frameMain"
+            NavigationUIVisibility="Hidden"
             Grid.Column="1"
-            Grid.Row="0"
-            HorizontalAlignment="Right"
-            VerticalAlignment="Center"
-            Width="60"
-            Height="50"
-            Template="{StaticResource ButtonTemplate}"/>
+            ContentRendered="FrameMain_ContentRendered"/>
 
         <Border
-            Grid.Column="1"
-            Grid.Row="1"
-            Background="DarkGray"
-            CornerRadius="10 0 0 0">                    
-            <Frame
-                x:Name="frameMain"
-                NavigationUIVisibility="Hidden"
-                ContentRendered="FrameMain_ContentRendered"/>
+            Grid.Column="2"
+            Background="Gray">
+
+            <StackPanel
+                Margin="5"
+                Orientation="Vertical"
+                Grid.Column="2">
+
+                <Image
+                    Source="/resurces\assets\icons\user.png"/>
+
+                <Label
+                    x:Name="lbLoginText"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"/>
+
+            </StackPanel>
+
         </Border>
     </Grid>
 </Window>

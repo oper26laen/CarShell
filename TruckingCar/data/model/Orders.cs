@@ -24,6 +24,7 @@ namespace TruckingCar.data.model
         public int ClientID { get; set; }
         public int CarID { get; set; }
         public System.DateTime DateAndTimeForOrder { get; set; }
+        public int CityID { get; set; }
         public int StatusID { get; set; }
     
         public virtual Cars Cars { get; set; }

@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="CarID" />
           </Key>
-          <Property Name="CarID" Type="int" Nullable="false" />
+          <Property Name="CarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CarMake" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="NumberOfTheCar" Type="int" Nullable="false" />
           <Property Name="ProductionYear" Type="date" Nullable="false" />
@@ -20,19 +20,18 @@
           <Key>
             <PropertyRef Name="CityID" />
           </Key>
-          <Property Name="CityID" Type="int" Nullable="false" />
+          <Property Name="CityID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="CityName" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityType Name="Clients">
           <Key>
             <PropertyRef Name="ClientID" />
           </Key>
-          <Property Name="ClientID" Type="int" Nullable="false" />
+          <Property Name="ClientID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="UserID" Type="int" Nullable="false" />
           <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Surname" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Phone" Type="varchar" MaxLength="50" Nullable="false" />
-          <Property Name="CityID" Type="int" Nullable="false" />
           <Property Name="PassportDetails" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="DriverLicense" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
@@ -40,17 +39,18 @@
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
-          <Property Name="OrderID" Type="int" Nullable="false" />
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ClientID" Type="int" Nullable="false" />
           <Property Name="CarID" Type="int" Nullable="false" />
           <Property Name="DateAndTimeForOrder" Type="datetime" Nullable="false" />
+          <Property Name="CityID" Type="int" Nullable="false" />
           <Property Name="StatusID" Type="int" Nullable="false" />
         </EntityType>
         <EntityType Name="Rentals">
           <Key>
             <PropertyRef Name="RentID" />
           </Key>
-          <Property Name="RentID" Type="int" Nullable="false" />
+          <Property Name="RentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" Nullable="false" />
           <Property Name="StartTime" Type="datetime" Nullable="false" />
           <Property Name="EndTime" Type="datetime" Nullable="false" />
@@ -60,14 +60,14 @@
           <Key>
             <PropertyRef Name="RoleID" />
           </Key>
-          <Property Name="RoleID" Type="int" Nullable="false" />
+          <Property Name="RoleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="RoleName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="Statuses">
           <Key>
             <PropertyRef Name="StatusID" />
           </Key>
-          <Property Name="StatusID" Type="int" Nullable="false" />
+          <Property Name="StatusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StatusName" Type="varchar" MaxLength="50" Nullable="false" />
         </EntityType>
         <EntityType Name="sysdiagrams">
@@ -84,7 +84,7 @@
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="int" Nullable="false" />
+          <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Login" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Password" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="RoleID" Type="int" Nullable="false" />
@@ -145,7 +145,7 @@
               <PropertyRef Name="CityID" />
             </Principal>
             <Dependent Role="Orders">
-              <PropertyRef Name="CarID" />
+              <PropertyRef Name="CityID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -284,7 +284,7 @@
           <Key>
             <PropertyRef Name="CarID" />
           </Key>
-          <Property Name="CarID" Type="Int32" Nullable="false" />
+          <Property Name="CarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CarMake" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="NumberOfTheCar" Type="Int32" Nullable="false" />
           <Property Name="ProductionYear" Type="DateTime" Nullable="false" Precision="0" />
@@ -298,7 +298,7 @@
           <Key>
             <PropertyRef Name="CityID" />
           </Key>
-          <Property Name="CityID" Type="Int32" Nullable="false" />
+          <Property Name="CityID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="CityName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Cities" FromRole="Cities" ToRole="Cars" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Cities" FromRole="Cities" ToRole="Orders" />
@@ -307,12 +307,11 @@
           <Key>
             <PropertyRef Name="ClientID" />
           </Key>
-          <Property Name="ClientID" Type="Int32" Nullable="false" />
+          <Property Name="ClientID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="UserID" Type="Int32" Nullable="false" />
           <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Surname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="CityID" Type="Int32" Nullable="false" />
           <Property Name="PassportDetails" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="DriverLicense" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Clients_Users" FromRole="Clients" ToRole="Users" />
@@ -322,10 +321,11 @@
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
-          <Property Name="OrderID" Type="Int32" Nullable="false" />
+          <Property Name="OrderID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="ClientID" Type="Int32" Nullable="false" />
           <Property Name="CarID" Type="Int32" Nullable="false" />
           <Property Name="DateAndTimeForOrder" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CityID" Type="Int32" Nullable="false" />
           <Property Name="StatusID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cars" Relationship="Self.FK_Orders_Cars" FromRole="Orders" ToRole="Cars" />
           <NavigationProperty Name="Cities" Relationship="Self.FK_Orders_Cities" FromRole="Orders" ToRole="Cities" />
@@ -337,7 +337,7 @@
           <Key>
             <PropertyRef Name="RentID" />
           </Key>
-          <Property Name="RentID" Type="Int32" Nullable="false" />
+          <Property Name="RentID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OrderID" Type="Int32" Nullable="false" />
           <Property Name="StartTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="EndTime" Type="DateTime" Nullable="false" Precision="3" />
@@ -348,7 +348,7 @@
           <Key>
             <PropertyRef Name="RoleID" />
           </Key>
-          <Property Name="RoleID" Type="Int32" Nullable="false" />
+          <Property Name="RoleID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="RoleName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Users" Relationship="Self.FK_Users_Roles" FromRole="Roles" ToRole="Users" />
         </EntityType>
@@ -356,7 +356,7 @@
           <Key>
             <PropertyRef Name="StatusID" />
           </Key>
-          <Property Name="StatusID" Type="Int32" Nullable="false" />
+          <Property Name="StatusID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="StatusName" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Cars" Relationship="Self.FK_Cars_Statuses" FromRole="Statuses" ToRole="Cars" />
           <NavigationProperty Name="Orders" Relationship="Self.FK_Orders_Statuses" FromRole="Statuses" ToRole="Orders" />
@@ -375,7 +375,7 @@
           <Key>
             <PropertyRef Name="UserID" />
           </Key>
-          <Property Name="UserID" Type="Int32" Nullable="false" />
+          <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Login" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="RoleID" Type="Int32" Nullable="false" />
@@ -426,7 +426,7 @@
               <PropertyRef Name="CityID" />
             </Principal>
             <Dependent Role="Orders">
-              <PropertyRef Name="CarID" />
+              <PropertyRef Name="CityID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -490,7 +490,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="TruckingCarEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="TruckingCarEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cars" EntityType="Self.Cars" />
           <EntitySet Name="Cities" EntityType="Self.Cities" />
           <EntitySet Name="Clients" EntityType="Self.Clients" />
@@ -583,7 +583,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище TruckingCarModelContainer" CdmEntityContainer="TruckingCarEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище TruckingCarModelContainer" CdmEntityContainer="TruckingCarEntities1">
           <EntitySetMapping Name="Cars">
             <EntityTypeMapping TypeName="TruckingCarModel.Cars">
               <MappingFragment StoreEntitySet="Cars">
@@ -612,7 +612,6 @@
                 <ScalarProperty Name="Name" ColumnName="Name" />
                 <ScalarProperty Name="Surname" ColumnName="Surname" />
                 <ScalarProperty Name="Phone" ColumnName="Phone" />
-                <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="PassportDetails" ColumnName="PassportDetails" />
                 <ScalarProperty Name="DriverLicense" ColumnName="DriverLicense" />
               </MappingFragment>
@@ -625,6 +624,7 @@
                 <ScalarProperty Name="ClientID" ColumnName="ClientID" />
                 <ScalarProperty Name="CarID" ColumnName="CarID" />
                 <ScalarProperty Name="DateAndTimeForOrder" ColumnName="DateAndTimeForOrder" />
+                <ScalarProperty Name="CityID" ColumnName="CityID" />
                 <ScalarProperty Name="StatusID" ColumnName="StatusID" />
               </MappingFragment>
             </EntityTypeMapping>

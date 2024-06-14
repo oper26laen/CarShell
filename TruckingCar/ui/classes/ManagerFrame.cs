@@ -4,6 +4,6 @@ namespace TruckingCar.ui.classes
 {
     class ManagerFrame
     {
-        public Frame frameMain { get; set; } 
+        public static Frame frameMain { get; set; } 
     }
 }

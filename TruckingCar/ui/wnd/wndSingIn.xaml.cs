@@ -24,34 +24,73 @@ namespace TruckingCar.ui.wnd
         public wndSingIn()
         {
             InitializeComponent();
+
+            pbPassword.IsEnabled = false;
+            tbPassword.IsEnabled = false;
+            chbPasswordChecked.IsEnabled = false;
+            btnSingIn.IsEnabled = false;
         }
         private void ChbPasswordChecked_Click(object sender, RoutedEventArgs e)
         {
-
+            var chbPassword = sender as CheckBox;
+            if (chbPassword.IsChecked.Value)
+            {
+                tbPassword.Text = pbPassword.Password;
+                pbPassword.Visibility = Visibility.Hidden;
+                tbPassword.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                pbPassword.Password = tbPassword.Text;
+                tbPassword.Visibility = Visibility.Hidden;
+                pbPassword.Visibility = Visibility.Visible;
+            }
         }
 
         private void TbLogin_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if(tbLogin.Text.Length > 0)
+            {
+                pbPassword.IsEnabled = true;
+                tbPassword.IsEnabled = true;
+            }
+            else
+            {
+                pbPassword.IsEnabled = false;
+                tbPassword.IsEnabled = false;
+            }
         }
 
         private void PbPassword_PasswordChanged(object sender, RoutedEventArgs e)
         {
-
+            if(tbLogin.Text.Length != 0 && pbPassword.Password.Length != 0)
+            {
+                chbPasswordChecked.IsEnabled = true;
+                btnSingIn.IsEnabled = true;
+            }
+            else
+            {
+                chbPasswordChecked.IsEnabled = false;
+                btnSingIn.IsEnabled = false;
+            }
         }
 
         private void TbPassword_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            if(pbPassword.Password.Length == 0)
+            {
+                pbPassword.Password = tbPassword.Text;
+            }
         }
 
         private void BtnSingIn_Click(object sender, RoutedEventArgs e)
         {
-            var User = TruckingCarEntities.GetContext().Users;
+            var User = TruckingCarEntities1.GetContext().Users;
             var CurrentUser = User.FirstOrDefault(x => x.Login == tbLogin.Text & x.Password == pbPassword.Password);
             if (CurrentUser != null)
             {
                 ManagerLogin.Login = tbLogin.Text;
+                ManagerID.UserID = CurrentUser.UserID;
                 wndMain wndMain = new wndMain();
                 wndMain.Show();
                 this.Close();

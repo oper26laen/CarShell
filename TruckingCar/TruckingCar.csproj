@@ -68,22 +68,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="ui\classes\ManagerFrame.cs" />
-    <Compile Include="ui\classes\ManagerLogin.cs" />
-    <Compile Include="ui\pg\pdListCars.xaml.cs">
-      <DependentUpon>pdListCars.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ui\uc\ClientProfilButton.xaml.cs">
-      <DependentUpon>ClientProfilButton.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ui\wnd\wndMain.xaml.cs">
-      <DependentUpon>wndMain.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ui\wnd\wndSingIn.xaml.cs">
-      <DependentUpon>wndSingIn.xaml</DependentUpon>
-    </Compile>
-  </ItemGroup>
-  <ItemGroup>
+    <Compile Include="data\classes\managerDB.cs" />
     <Compile Include="data\model\Cars.cs">
       <DependentUpon>TruckingCarDB.tt</DependentUpon>
     </Compile>
@@ -132,6 +117,29 @@
     <Compile Include="data\model\Users.cs">
       <DependentUpon>TruckingCarDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="ui\classes\ManagerFrame.cs" />
+    <Compile Include="ui\classes\ManagerID.cs" />
+    <Compile Include="ui\classes\ManagerLogin.cs" />
+    <Compile Include="ui\pg\pgListCars.xaml.cs">
+      <DependentUpon>pgListCars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pg\pgOrderCar.xaml.cs">
+      <DependentUpon>pgOrderCar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\pg\pgRentTimer.xaml.cs">
+      <DependentUpon>pgRentTimer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\uc\ClientProfilButton.xaml.cs">
+      <DependentUpon>ClientProfilButton.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\wnd\wndMain.xaml.cs">
+      <DependentUpon>wndMain.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ui\wnd\wndSingIn.xaml.cs">
+      <DependentUpon>wndSingIn.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -169,16 +177,6 @@
     <Folder Include="resurces\assets\images\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="data\model\TruckingCarDB.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>TruckingCarDB.Context.cs</LastGenOutput>
-      <DependentUpon>TruckingCarDB.edmx</DependentUpon>
-    </Content>
-    <Content Include="data\model\TruckingCarDB.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>TruckingCarDB.edmx</DependentUpon>
-      <LastGenOutput>TruckingCarDB.cs</LastGenOutput>
-    </Content>
     <Resource Include="resurces\assets\icons\user.png" />
     <Resource Include="resurces\assets\logotype\racing-car.png" />
   </ItemGroup>
@@ -194,7 +192,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="ui\pg\pdListCars.xaml">
+    <Page Include="ui\pg\pgListCars.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\pg\pgOrderCar.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ui\pg\pgRentTimer.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -210,6 +216,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="data\model\TruckingCarDB.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TruckingCarDB.edmx</DependentUpon>
+      <LastGenOutput>TruckingCarDB.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="data\model\TruckingCarDB.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>TruckingCarDB.edmx</DependentUpon>
+      <LastGenOutput>TruckingCarDB.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

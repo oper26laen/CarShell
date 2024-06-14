@@ -15,19 +15,18 @@ namespace TruckingCar.data.model
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class TruckingCarEntities : DbContext
+    public partial class TruckingCarEntities1 : DbContext
     {
-        private static TruckingCarEntities _context;
-
-        public TruckingCarEntities()
-            : base("name=TruckingCarEntities")
+        private static TruckingCarEntities1 _context;
+        public TruckingCarEntities1()
+            : base("name=TruckingCarEntities1")
         {
         }
 
-        public static TruckingCarEntities GetContext()
+        public static TruckingCarEntities1 GetContext()
         {
             if (_context == null)
-                _context = new TruckingCarEntities();
+                _context = new TruckingCarEntities1();
 
             return _context;
         }
