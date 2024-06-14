@@ -129,9 +129,6 @@
     <Compile Include="ui\pg\pgRentTimer.xaml.cs">
       <DependentUpon>pgRentTimer.xaml</DependentUpon>
     </Compile>
-    <Compile Include="ui\uc\ClientProfilButton.xaml.cs">
-      <DependentUpon>ClientProfilButton.xaml</DependentUpon>
-    </Compile>
     <Compile Include="ui\wnd\wndMain.xaml.cs">
       <DependentUpon>wndMain.xaml</DependentUpon>
     </Compile>
@@ -201,10 +198,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ui\pg\pgRentTimer.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ui\uc\ClientProfilButton.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

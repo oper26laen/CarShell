@@ -25,7 +25,6 @@ namespace TruckingCar.ui.pg
         public pgListCars()
         {
             InitializeComponent();
-            dgListCars.ItemsSource = TruckingCarEntities1.GetContext().Cars.ToList();
 
             var Client = TruckingCarEntities1.GetContext().Clients;
             var ClientID = Client.FirstOrDefault(x => x.UserID == ManagerID.UserID);
@@ -36,6 +35,9 @@ namespace TruckingCar.ui.pg
             allCities.Insert(0, new Cities { CityName = "Все города" });
             combCities.ItemsSource = allCities;
             combCities.SelectedIndex = 0;
+
+            var currentCars = TruckingCarEntities1.GetContext().Cars.ToList();
+            dgListCars.ItemsSource = currentCars;
         }
 
         private void BtnOrder_Click(object sender, RoutedEventArgs e)
@@ -45,7 +47,10 @@ namespace TruckingCar.ui.pg
 
         private void CombCities_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            var currentCar = TruckingCarEntities1.GetContext().Cars.ToList();
 
+            if (combCities.SelectedIndex > 0)
+                currentCar = currentCar.Where(p => p.Cities.CityName.Contains(Convert.ToString(combCities.SelectedItem as Cities))).ToList();
         }
     }
 }
