@@ -89,7 +89,10 @@ namespace TruckingCar.ui.pg
 
             btnEndRent.Visibility = Visibility.Hidden;
             MessageBox.Show("Арнде завершина");
+            Money.Content = Convert.ToString(moneyOfDecimal) + "р";
             btnGoHome.Visibility = Visibility.Visible;
+            Content.Visibility = Visibility.Visible;
+            Money.Visibility = Visibility.Visible;
         }
 
         private void BtnGoHome_Click(object sender, RoutedEventArgs e)

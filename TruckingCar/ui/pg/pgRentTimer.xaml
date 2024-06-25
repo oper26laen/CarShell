@@ -24,6 +24,24 @@
         </Grid.RowDefinitions>
 
         <Label
+            x:Name="Content"
+            Content="Стоймость поездки составила:"
+            Grid.Column="1"
+            Grid.Row="0"
+            Visibility="Hidden"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"/>
+
+        <Label
+            x:Name="Money"
+            Content=""
+            Grid.Column="1"
+            Grid.Row="1"
+            Visibility="Hidden"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Top"/>
+
+        <Label
             x:Name="TimerLabel"
             Content="0"
             FontFamily="Segoe UI"
